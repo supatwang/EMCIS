@@ -65,8 +65,8 @@ if (option && typeof option === "object") {
 
 function change_rc(id){
               //console.log(data[idd]);
-               $.getJSON('./recgraph.json', function (data) {
-              chart.setOption(option = {series:[{data: json[id].nodes.map(function (node) {
+               $.getJSON('./recgraph.json', function (json) {
+              myChart2.setOption(option = {series:[{data: json[3].nodes.map(function (node) {
                     return {
                         x: node.x,
                         y: node.y,
@@ -80,7 +80,7 @@ function change_rc(id){
                         }
                     };
                 }),
-                edges: json[id].edges.map(function (edge) {
+                edges: json[3].edges.map(function (edge) {
                     return {
                         source: edge.by,
                         target: edge.fromm,
